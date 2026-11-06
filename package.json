@@ -1,0 +1,14 @@
+{
+  "name": "string-instrument-tuner",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "test": "npm run build && node --test tests/core.test.js",
+    "start": "python -m http.server 8080 --bind 127.0.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  }
+}

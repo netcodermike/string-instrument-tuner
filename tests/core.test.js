@@ -1,0 +1,2 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';import * as c from '../dist/core.js';
+test('detects reference and bass sine tones; rejects silence',()=>{for(const f of [55,110,440]){const x=Array.from({length:2048},(_,i)=>.5*Math.sin(2*Math.PI*f*i/12000));assert.ok(Math.abs(c.estimatePitch(x,12000)-f)/f<.025)}assert.equal(c.estimatePitch(Array(2048).fill(0),12000),null);assert.ok(Math.abs(c.pitchInfo(440).cents)<1e-8)});
